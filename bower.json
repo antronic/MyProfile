@@ -1,0 +1,29 @@
+{
+  "name": "myprofile",
+  "description": "This is my portfolio that contain all my works.",
+  "main": "server.js",
+  "authors": [
+    "Jirachai Chansivanon"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Jirachai",
+    "Chansivanon",
+    "Job",
+    "JobAntronic",
+    "Jirachai",
+    "Chansivanon",
+    "Job",
+    "Jirachai",
+    "antronic"
+  ],
+  "homepage": "https://github.com/antronic/MyProfile",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ]
+}

@@ -26,5 +26,18 @@
   "bugs": {
     "url": "https://github.com/antronic/MyProfile/issues"
   },
-  "homepage": "https://github.com/antronic/MyProfile#readme"
+  "homepage": "https://github.com/antronic/MyProfile#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.16.0",
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
 }
