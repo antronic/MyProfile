@@ -3,5 +3,5 @@
     "es2015"
   ],
   "comments": false,
-  "minifed": true
+  "minified": true
 }
