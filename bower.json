@@ -25,5 +25,9 @@
     "public/libs",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "components-font-awesome": "^4.6.3",
+    "foundation-sites": "^6.2.3"
+  }
 }
