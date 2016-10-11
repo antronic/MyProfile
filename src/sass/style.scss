@@ -30,8 +30,21 @@ body{
 
 /* FOUNDATION */
 
+/** MIXIN */
+
+@mixin bigHead($font-size: 10rem, $line-height: 10rem){
+  .title{
+    padding: 0;
+    font-size: $font-size;
+    font-weight: 900;
+    line-height: $line-height;
+    margin-top: 3.5rem;
+  }
+}
+
+/** MIXIN */
+
 #welcome{
-  background-color: $bg;
   .header{
     padding: 1rem .5rem;
     #burger{
@@ -250,13 +263,175 @@ body{
   }
 }
 
+#skills{
+  @include bigHead(8.5rem, 8.5rem);
+  @extend .colorful_item;
+}
+
+#tools{
+  @include bigHead(8.5rem, 8.5rem);
+  @extend .colorful_item;
+  border-top: 5px solid #fff;
+}
+
+#projects{
+  @include bigHead(4rem, 4rem);
+  .title{
+    margin-top: 0rem;
+    background: #FFF;
+    background: -webkit-linear-gradient(left, #FFF, #CCC); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #FFF, #CCC); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #FFF, #CCC); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #FFF, #CCC); /* Standard syntax */
+    color: $bg;
+    padding-top: 2rem;
+  }
+  .projects{
+    margin-top: 4rem;
+  }
+  .project{
+    & + .project{
+      margin-top: 2rem;
+    }
+    .item{
+      opacity: 0.25;
+      img{
+        width: 100%;
+        transition: all ease .5s;
+      }
+      &:hover{
+        opacity: 1;
+        img{
+          box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, .25);
+        }
+      }
+    }
+  }
+}
+
+#contact{
+  .header{
+    padding: 1rem .5rem;
+  }
+  .content{
+    margin-top: 1rem;
+    #bigguy{
+      font-weight: 700;
+      margin-left: auto;
+      margin-right: auto;
+      // width: 50%;
+      font-size: 10rem;
+      text-align: center;
+      border-bottom: 1px solid #596A71;
+      line-height: 10rem;
+      color: $primary;
+    }
+    #underline{
+      text-align: center;
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: $primary;
+      #myname{
+        font-style: italic;
+        color: #FFF;
+      }
+    }
+
+    .social{
+      margin-top: 3rem;
+      font-size: 1.225rem;
+      color: $primary;
+      font-size: 2rem;
+      line-height: 3rem;
+      font-weight: 700;
+      a{
+        color: #fff;
+        i{
+          padding: 0rem .075rem;
+        }
+        &:hover{
+          color: lighten($primary, 15);
+        }
+        &:visited{
+          color: inherit;
+        }
+      }
+      .fa{
+        color: $primary;
+      }
+      span{
+        color: #fff;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.colorful_item{
+  .list + .list{
+    margin-top: 2rem;
+  }
+  .list{
+    padding: 0;
+    .item{
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.45rem;
+    }
+    .primary{
+      .head{
+        background-color: $primary;
+      }
+      color: $primary;
+    }
+    .danger{
+      .head{
+        background-color: $red;
+      }
+      color: $red;
+    }
+    .warning{
+      .head{
+        background-color: $yellow;
+      }
+      color: $yellow;
+    }
+    .grey{
+      .head{
+        background-color: $grey;
+      }
+      color: $grey;
+    }
+    .head{
+      background-color: $primary;
+      // color: lighten($bg, 5);
+      color: $bg;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 2rem;
+      padding-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+  }
+}
+
 .page{
   position: relative;
   width: 100%;
+  padding-bottom: 1rem;
   &.full{
     height: 100%;
   }
   &.min{
     min-height: 100%;
+  }
+  &.default{
+    background-color: $bg;
+  }
+  &.moreDark{
+    background-color: darken($bg, 1.5);
   }
 }
