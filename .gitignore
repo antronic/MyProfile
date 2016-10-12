@@ -3,3 +3,4 @@ bower_components
 public/libs
 ./app
 *.dev*
+.DS_Store
