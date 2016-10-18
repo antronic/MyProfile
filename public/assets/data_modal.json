@@ -1,0 +1,41 @@
+{
+  "tedxkmutt":{
+    "cover": "TEDxKMUTT",
+    "duty":[
+      "Web Developer",
+      "Live Streaming Manager"
+    ]
+  },
+  "jwc8":{
+    "cover": "JWC8",
+    "duty":[
+      "Master of Ceremonies",
+      "Programming Advisor",
+      "Social Controller"
+    ]
+  },
+  "jpc12":{
+    "cover": "JPC12",
+    "duty":[
+
+    ]
+  },
+  "antronic":{
+    "cover": "antronic",
+    "duty":[
+
+    ]
+  },
+  "dekcomstory":{
+    "cover": "DEKCOMSTORY",
+    "duty":[
+
+    ]
+  },
+  "camphub":{
+    "cover": "CampHUB",
+    "duty":[
+
+    ]
+  }
+}
