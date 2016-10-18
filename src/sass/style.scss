@@ -1,5 +1,5 @@
 // @import 'https://fonts.googleapis.com/css?family=Roboto:400,600,700,700i,900,900i&subset=thai';
-@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
+// @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
 // @import 'https://fonts.googleapis.com/css?family=Kanit:300,400,600&subset=thai';
 
 $bg: #1D1E20;
@@ -288,6 +288,10 @@ body{
   }
   .projects{
     margin-top: 7%;
+    visibility: visible;
+    &.hide{
+      visibility: hidden;
+    }
   }
   .project{
     & + .project{
@@ -300,10 +304,137 @@ body{
         width: 100%;
         transition: all ease .5s;
       }
-      &:hover{
+      &:hover,
+      &:focus{
         opacity: 1;
         img{
           box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, .25);
+        }
+      }
+      &:active{
+        img{
+          transform: scale(.95);
+          transition: all ease .25s;
+        }
+      }
+    }
+  }
+  #modal_bg{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba($color: #000, $alpha: .75);
+    z-index: 9998;
+    opacity: 0;
+    transition: all ease .25s;
+    visibility: hidden;
+    &.show{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .modal_project{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .25);
+    color: #fff;
+    position: relative;
+    min-width: 100%;
+    margin-top: 6.25rem;
+    background-color: $bg;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #fff;
+    overflow-x: auto;
+    max-height: 0px;
+    opacity: .5;
+    transition: all ease .5s;
+    &.show{
+      opacity: 1;
+      border-width: 1px;
+      max-height: 1000px;
+      .modal_header{
+        .close_modal{
+          outline: none;
+          font-size: 1.5rem;
+          padding: .35rem .5rem;
+          background-color: transparent;
+          color: #000;
+          &:hover{
+            color: #fff;
+            background-color: darken($red, 10);
+          }
+          &:active{
+            color: #fff;
+            background-color: darken($red, 30);
+          }
+        }
+      }
+    }
+    .modal_header{
+      background-color: #fff;
+      color: $bg;
+      .close_modal{
+        cursor: default;
+        outline: none;
+        font-size: 1.5rem;
+        padding: .35rem .5rem;
+        color: #fff;
+        background-color: darken($red, 30);
+      }
+    }
+    .modal_cover{
+      // border-bottom: 1px solid $primary;
+      border-bottom: 1px solid #fff;
+      img{
+        width: 100%;
+      }
+    }
+    .modal_body{
+      padding: 1.5rem 1rem;
+      .duty{
+        display: flex;
+        div{
+          display: flex;
+        }
+        p{
+          font-size: 1.35rem;
+          font-weight: 700;
+        }
+        .item{
+          margin-left: .5rem;
+          background-color: $primary;
+          color: $bg;
+          padding-left: .5rem;
+          padding-right: .5rem;
+          font-weight: 300;
+          text-transform: capitalize;
+        }
+      }
+      .orbit{
+        .orbit-previous,
+        .orbit-next{
+          padding: .75rem .5rem;
+        }
+        ul,
+        li,
+        img,
+        button{
+          outline: none !important;
+        }
+        figcaption{
+          padding: .5rem 1rem;
+        }
+        .orbit-bullets{
+          margin: .125rem;
+          button{
+            border-radius: 0px;
+            outline: none;
+            width: .75rem;
+            height: .5rem;
+            background-color: lighten($bg, 20);
+            &.is-active{
+              background-color: $primary;
+            }
+          }
         }
       }
     }
