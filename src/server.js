@@ -16,6 +16,6 @@ app.set('views', path.join(__dirname, 'views'))
 import routes from './app/routes'
 routes(app)
 
-server.listen(9000 | process.env.PORT, () => {
+server.listen(9000 | process.env.PORT,  () => {
   console.log(project_name + " is listening on " + server.address().port)
 })
