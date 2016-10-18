@@ -28,6 +28,8 @@
   ],
   "dependencies": {
     "components-font-awesome": "^4.6.3",
-    "foundation-sites": "^6.2.3"
+    "foundation-sites": "^6.2.3",
+    "motion-ui": "^1.2.2",
+    "rgbaster": "^1.1.0"
   }
 }
