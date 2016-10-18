@@ -321,6 +321,7 @@ body{
   }
   #modal_bg{
     position: absolute;
+    padding-bottom: 3.25rem;
     width: 100%;
     min-height: 100%;
     background-color: rgba($color: #000, $alpha: .75);
@@ -334,11 +335,11 @@ body{
     }
   }
   .modal_project{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .25);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .35);
     color: #fff;
     position: relative;
     min-width: 100%;
-    margin-top: 6.25rem;
+    margin-top: 3.25rem;
     background-color: $bg;
     border-width: 0px;
     border-style: solid;
@@ -350,7 +351,7 @@ body{
     &.show{
       opacity: 1;
       border-width: 1px;
-      max-height: 1000px;
+      max-height: 700px;
       .modal_header{
         .close_modal{
           outline: none;
@@ -391,15 +392,16 @@ body{
     .modal_body{
       padding: 1.5rem 1rem;
       .duty{
-        display: flex;
         div{
-          display: flex;
+          display: inline-block;
         }
         p{
+          display: inline-block;
           font-size: 1.35rem;
           font-weight: 700;
         }
         .item{
+          font-size: 1rem;
           margin-left: .5rem;
           background-color: $primary;
           color: $bg;
@@ -408,6 +410,9 @@ body{
           font-weight: 300;
           text-transform: capitalize;
         }
+      }
+      .modal_content{
+        font-size: 1.15rem;
       }
       .orbit{
         .orbit-previous,
