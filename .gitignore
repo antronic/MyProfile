@@ -1,6 +1,7 @@
 node_modules
 bower_components
 public/libs
-app
+/app
 *.dev*
 .DS_Store
+npm-debug.log
