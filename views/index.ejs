@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css">
     <title>MyProfile | Jirachai Chansivanon</title>
   </head>
@@ -281,34 +282,102 @@
     </div>
 
     <div id="projects" class="page min default">
+      <!-- MODALs -->
+      <div id="started_modal">
+        <div id="modal_bg">
+          <div class="medium-8 medium-offset-2 small-10 small-offset-1">
+            <div class="modal_project">
+              <div class="modal_header text-right">
+                <button class="close_modal">&#10005;</button>
+              </div>
+              <div class="modal_cover">
+                <img id="modal_cover_img" src="/img/cover/cover_DEKCOMSTORY.jpg" alt="" data-adaptive-background>
+              </div>
+              <div class="modal_body row">
+                <div class="small-12 columns duty">
+                  <p>Duty : </p>
+                  <div class="items">
+                    <p class="item">test</p>
+                    <p class="item">test</p>
+                  </div>
+                </div>
+                <div class="medium-7 columns">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="medium-5 columns">
+
+                  <!-- /img/content/DEKCOMSTORY.jpg -->
+
+                  <div class="orbit" role="region" data-orbit data-bullets="true" data-options="timerDelay: 3000; animInFromLeft: hinge-in-from-bottom; animInFromRight: hinge-in-from-top; animOutToLeft: hinge-out-from-bottom; animOutToRight: hinge-out-from-top;" data-accessible="false" data-infinite-wrap="true">
+                    <!-- <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
+                    <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button> -->
+
+                    <ul class="orbit-container">
+                      <li class="is-active orbit-slide">
+                        <img class="orbit-image" src="/img/content/DEKCOMSTORY.jpg" alt="slide1">
+                        <figcaption class="orbit-caption">1</figcaption>
+                      </li>
+                      <li class="orbit-slide">
+                        <img class="orbit-image" src="/img/content/DEKCOMSTORY.jpg" alt="slide2">
+                        <figcaption class="orbit-caption">2</figcaption>
+                      </li>
+                    </ul>
+
+                    <nav class="orbit-bullets">
+                      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+                      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                    </nav>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MODALs -->
+
       <div class="title">My Projects</div>
       <div class="row projects">
 
         <div class="row project">
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/tedx.jpg" alt="TEDxKMUTT">
+            <a href="#projects">
+              <img src="/img/thumbnails/tedx.jpg" alt="TEDxKMUTT" data-modal="tedxkmutt">
+            </a>
           </div>
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/jwc8.jpg" alt="JWC8">
+            <a href="#projects">
+              <img src="/img/thumbnails/jwc8.jpg" alt="JWC8" data-modal="jwc8">
+            </a>
           </div>
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/jpcxii.jpg" alt="JPC12">
+            <a href="#projects">
+              <img src="/img/thumbnails/jpcxii.jpg" alt="JPC12" data-modal="jpc12">
+            </a>
           </div>
         <!-- </div>
 
         <div class="row project"> -->
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/fullscreen_youtube.jpg" alt="antronic's channel">
+            <a href="#projects">
+              <img src="/img/thumbnails/fullscreen_youtube.jpg" alt="antronic's channel" data-modal="antronic">
+            </a>
           </div>
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/dekcomstory.jpg" alt="DEKCOMSTORY">
+            <a href="#projects">
+              <img src="/img/thumbnails/dekcomstory.jpg" alt="DEKCOMSTORY" data-modal="dekcomstory">
+            </a>
           </div>
           <div class="medium-6 large-4 item columns">
-            <img src="/img/thumbnails/camphub.jpg" alt="CampHUB.in.th">
+            <a href="#projects">
+              <img src="/img/thumbnails/camphub.jpg" alt="CampHUB.in.th" data-modal="camphub">
+            </a>
           </div>
         </div>
 
       </div>
+
     </div>
 
     <div id="contact" class="page min default">
@@ -355,7 +424,7 @@
             <div class="row item">
               <a href="mailto:antronic.inc@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>antronic.inc@gmail.co</span>
+                <span>antronic.inc@gmail.com</span>
               </a>
             </div>
             <div class="row item">
@@ -370,12 +439,29 @@
       </div>
     </div>
   </body>
-  <script src="/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script src="/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/libs/rgbaster/rgbaster.min.js" charset="utf-8"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.core.js"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.util.touch.js"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.util.motion.js"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.util.timerAndImageLoader.js"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.util.keyboard.js"></script>
+  <script src="/libs/foundation-sites/dist/plugins/foundation.orbit.js"></script>
+  <script src="/libs/motion-ui/dist/motion-ui.min.js" charset="utf-8"></script>
+  <script src="/libs/foundation-sites/dist/foundation.min.js"></script>
+  <script src="/assets/js/data_modal.js"></script>
+  <script src="/assets/js/script.js"></script>
+
   <script type="text/javascript">
   $(document).ready(function(){
     $('#burger').click(function(){
       $(this).toggleClass('open');
     });
   });
+  </script>
+  <script type="text/javascript">
+    $(document).foundation();
+    var project = new Foundation.Orbit($(".orbit"))
   </script>
 </html>
