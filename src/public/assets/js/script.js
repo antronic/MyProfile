@@ -113,13 +113,6 @@ $('#projects .projects .project .item a').on('click', (e)=>{
 
     setTimeout(()=>{
       $('#projects #modal_bg .modal_project').addClass('show')
-      // setTimeout(()=>{
-      //     var first_img_height = $('.modal_project .orbit .orbit-container img')[0].height
-      //     $('.modal_project .orbit .orbit-container, .modal_project .orbit .orbit-container .orbit-slide').css('max-height', first_img_height)
-      //     $('.modal_project .orbit .orbit-container, .modal_project .orbit .orbit-container .orbit-slide').css('height', first_img_height)
-      //     console.log(first_img_height)
-      //   }
-      // }, 5000)
     }, 300)
   })
 })
