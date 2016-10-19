@@ -113,6 +113,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
 
     setTimeout(()=>{
       $('#projects #modal_bg .modal_project').addClass('show')
+    
     }, 300)
   })
 })
