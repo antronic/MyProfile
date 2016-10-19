@@ -66,14 +66,15 @@ $('#projects .projects .project .item a').on('click', (e)=>{
       $('.modal_project .modal_body .modal_content').html(content)
 
       // init orbit
-      let orbit = (contents.orbit.length > 0)? contents.orbit[0] : 'DEKCOMSTORY'
+      let orbit = (contents.orbit.length > 0)? contents.orbit[0][0] : 'DEKCOMSTORY'
+      let caption = (contents.orbit.length > 0 && contents.orbit[0].length > 1)? contents.orbit[0][1] : 'none'
 
       var orbit_html = ''
       var bullets_html = ''
       if(contents.orbit.length > 0 && contents.orbit.length <= 1){
         orbit_html += '<li class="is-active orbit-slide">'
         orbit_html += '<img class="orbit-image" src="/img/content/'+ orbit + '.jpg" alt="slide'+ 1 +'">'
-        // orbit_html += '<figcaption class="orbit-caption">1</figcaption>'
+        orbit_html += '<figcaption class="orbit-caption">'+ caption +'</figcaption>'
         orbit_html += '</li>'
 
         bullets_html += '<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>'
@@ -81,15 +82,15 @@ $('#projects .projects .project .item a').on('click', (e)=>{
         for( i = 0; i < contents.orbit.length; i++){
           if(i == 0){
             orbit_html += '<li class="orbit-slide">'
-            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i] + '.jpg" alt="slide'+ (i+1) +'">'
-            orbit_html += '<figcaption class="orbit-caption">' + (i+1) + '</figcaption>'
+            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i][0] + '.jpg" alt="slide'+ (i+1) +'">'
+            orbit_html += '<figcaption class="orbit-caption">' + contents.orbit[i][1] + '</figcaption>'
             orbit_html += '</li>'
 
             bullets_html += '<button class="is-active" data-slide="' + (i) + '"><span class="show-for-sr">slide'+ (i+1) +' details.</span></button>'
           }else{
             orbit_html += '<li class="orbit-slide">'
-            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i] + '.jpg" alt="slide'+ (i+1) +'">'
-            orbit_html += '<figcaption class="orbit-caption">' + (i+1) + '</figcaption>'
+            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i][0] + '.jpg" alt="slide'+ (i+1) +'">'
+            orbit_html += '<figcaption class="orbit-caption">' + contents.orbit[i][1] + '</figcaption>'
             orbit_html += '</li>'
 
             bullets_html += '<button data-slide="' + (i) + '"><span class="show-for-sr">slide'+ i +' details.</span></button>'
@@ -98,7 +99,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
       }else{
         orbit_html += '<li class="is-active orbit-slide">'
         orbit_html += '<img class="is-active orbit-image" src="/img/content/'+ orbit + '.jpg" alt="slide'+ 1 +'">'
-        orbit_html += '<figcaption class="orbit-caption">empty</figcaption>'
+        orbit_html += '<figcaption class="orbit-caption">'+ caption +'</figcaption>'
         orbit_html += '</li>'
 
         bullets_html += '<button data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>'
