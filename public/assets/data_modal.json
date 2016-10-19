@@ -12,8 +12,8 @@
       "<strong><a href='https://tedxkmutt.com/'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
-      "TEDxKMUTT",
-      "TEDxKMUTT"
+      ["TEDxKMUTT","TEDxKMUTT1"],
+      ["TEDxKMUTT","TEDxKMUTT2"]
     ]
   },
   "jwc8":{
@@ -30,7 +30,6 @@
       "<strong><a href='http://jwc.in.th/'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
-      "DEKCOMSTORY"
     ]
   },
   "jpc12":{
@@ -45,7 +44,6 @@
       "<strong>Junior Programmer Camp</strong> or <strong>JPC</strong> is the camp for high school's students established by SIT@KMUTT that's running by Computer Science's students. This camp aims to Computer Science's life in an university, and programmer real life."
     ],
     "orbit": [
-      "DEKCOMSTORY"
     ]
   },
   "antronic":{
@@ -62,7 +60,6 @@
       "<strong><a href='https://youtube.com/antronic0inc'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
-      "DEKCOMSTORY"
     ]
   },
   "dekcomstory":{
@@ -82,9 +79,7 @@
       "<strong><a href='https://fb.com/dekcomstorypage'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
-      "DEKCOMSTORY",
-      "DEKCOMSTORY",
-      "DEKCOMSTORY"
+      ["DEKCOMSTORY", "Fanpage"]
     ]
   },
   "camphub":{
@@ -97,7 +92,6 @@
       "<strong><a href='http://camphub.in.th'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
-      "DEKCOMSTORY"
     ]
   }
 }
