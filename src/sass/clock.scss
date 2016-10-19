@@ -1,0 +1,18 @@
+@import 'page';
+
+#countdown{
+  background-color: $bg;
+  .title{
+    font-size: 8rem;
+  }
+  .clock{
+    .number{
+      color: $primary;
+      font-weight: 700;
+      font-size: 15rem;
+    }
+    .number + .number{
+      margin-left: 3rem;
+    }
+  }
+}
