@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/assets/css/page.min.css">
+    <link rel="stylesheet" href="/assets/css/clock.min.css">
+    <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css">
+    <title>CountDown | Jirachai Chansivanon</title>
+  </head>
+  <body>
+    <div id="countdown" class="page min default">
+      <p class="title">Countdown</p>
+      <div class="clock text-center">
+        <span id="hr" class="number">00</span>
+        <span id="mm" class="number">00</span>
+        <span id="sc" class="number">00</span>
+        <span id="ms" class="number">00</span>
+      </div>
+    </div>
+  </body>
+
+  <script src="/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/libs/jquery-smooth-scroll/jquery.smooth-scroll.min.js" charset="utf-8"></script>
+  <script src="/libs/foundation-sites/dist/foundation.min.js"></script>
+  <script src="/libs/countdown/dest/jquery.countdown.min.js"></script>
+  <script src="/assets/js/countdown.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('a').smoothScroll()
+    $('#burger').click(function(){
+      $(this).toggleClass('open');
+    });
+  });
+  </script>
+  <script type="text/javascript">
+    $(document).foundation();
+    var project = new Foundation.Orbit($(".orbit"))
+  </script>
+</html>
