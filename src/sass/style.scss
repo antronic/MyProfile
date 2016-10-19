@@ -1,6 +1,14 @@
-// @import 'https://fonts.googleapis.com/css?family=Roboto:400,600,700,700i,900,900i&subset=thai';
-// @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
 // @import 'https://fonts.googleapis.com/css?family=Kanit:300,400,600&subset=thai';
+
+// $bg: #1D1E20;
+// $primary: #6DFBEF;
+// $text: #909B93;
+// $yellow: #7C9B95;
+// $red: #ebeb94;
+// $grey: #C2C3C5;
+// $progress_bar_color: #C3CEC7;
+// $progress_bar_bg: #4B4C51;
 
 $bg: #1D1E20;
 $primary: #6DFBEF;
@@ -11,10 +19,11 @@ $grey: #C2C3C5;
 $progress_bar_color: #C3CEC7;
 $progress_bar_bg: #4B4C51;
 
+$close_red: #FB6E6D;
+
 html,
 body{
   padding: 0;
-  // font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
   color: #FFF;
 }
@@ -29,6 +38,31 @@ body{
 }
 
 /* FOUNDATION */
+
+.disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.title_line{
+  p.title.m{
+    border-top: 1px solid #fff;
+    padding-top: 3rem;
+  }
+  p.title.n{
+    border-top: 1px solid #fff;
+    padding-top: 3rem;
+    margin-top: 0rem;
+  }
+  .title.removeMargin{
+    margin-top: 0rem;
+  }
+  .title.addPadding{
+    padding-top: 3.5rem;
+  }
+}
 
 /** MIXIN */
 
@@ -265,27 +299,32 @@ body{
 
 #skills{
   @include bigHead(8.5rem, 8.5rem);
+  @extend .title_line;
   @extend .colorful_item;
 }
 
 #tools{
   @include bigHead(8.5rem, 8.5rem);
+  @extend .title_line;
   @extend .colorful_item;
-  border-top: 5px solid #fff;
+  // border-top: 5px solid #fff;
 }
 
 #projects{
-  @include bigHead(4rem, 4rem);
-  .title{
-    margin-top: 0rem;
-    background: #FFF;
-    background: -webkit-linear-gradient(left, #FFF, #CCC); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #FFF, #CCC); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #FFF, #CCC); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #FFF, #CCC); /* Standard syntax */
-    color: $bg;
-    padding-top: 2rem;
-  }
+  // @include bigHead(4rem, 4rem);
+  @include bigHead(6.5rem, 6.5rem);
+  @extend .title_line;
+  @extend .colorful_item;
+  // .title{
+  //   margin-top: 0rem;
+  //   background: #FFF;
+  //   background: -webkit-linear-gradient(left, #FFF, #CCC); /* For Safari 5.1 to 6.0 */
+  //   background: -o-linear-gradient(right, #FFF, #CCC); /* For Opera 11.1 to 12.0 */
+  //   background: -moz-linear-gradient(right, #FFF, #CCC); /* For Firefox 3.6 to 15 */
+  //   background: linear-gradient(to right, #FFF, #CCC); /* Standard syntax */
+  //   color: $bg;
+  //   padding-top: 2rem;
+  // }
   .projects{
     margin-top: 7%;
     visibility: visible;
@@ -344,7 +383,7 @@ body{
     border-width: 0px;
     border-style: solid;
     border-color: #fff;
-    overflow-x: auto;
+    overflow-y: auto;
     max-height: 0px;
     opacity: .5;
     transition: all ease .5s;
@@ -361,11 +400,11 @@ body{
           color: #000;
           &:hover{
             color: #fff;
-            background-color: darken($red, 10);
+            background-color: darken($close_red, 10);
           }
           &:active{
             color: #fff;
-            background-color: darken($red, 30);
+            background-color: darken($close_red, 30);
           }
         }
       }
@@ -379,7 +418,7 @@ body{
         font-size: 1.5rem;
         padding: .35rem .5rem;
         color: #fff;
-        background-color: darken($red, 30);
+        background-color: darken($close_red, 30);
       }
     }
     .modal_cover{
@@ -401,6 +440,8 @@ body{
           font-weight: 700;
         }
         .item{
+          @extend .disable-select;
+          cursor: default;
           font-size: 1rem;
           margin-left: .5rem;
           background-color: $primary;
@@ -425,14 +466,20 @@ body{
         button{
           outline: none !important;
         }
+        ul,li{
+          min-height: 176px !important;
+          max-height: 1000px !important;
+        }
         figcaption{
           padding: .5rem 1rem;
         }
         .orbit-bullets{
           margin: .125rem;
+          display: flex;
           button{
             border-radius: 0px;
             outline: none;
+            flex: auto;
             width: .75rem;
             height: .5rem;
             background-color: lighten($bg, 20);
@@ -457,7 +504,7 @@ body{
       margin-left: auto;
       margin-right: auto;
       // width: 50%;
-      font-size: 10rem;
+      font-size: 8rem;
       text-align: center;
       border-bottom: 1px solid #596A71;
       line-height: 10rem;
@@ -475,15 +522,15 @@ body{
     }
 
     .social{
-      margin-top: 3rem;
-      font-size: 1.225rem;
+      margin-top: 2.25rem;
       color: $primary;
-      font-size: 2rem;
-      line-height: 3rem;
+      font-size: 1.75rem;
+      line-height: 2.25rem;
       font-weight: 700;
       a{
         color: #fff;
         i{
+          font-size: 1.75rem;
           padding: 0rem .075rem;
         }
         &:hover{
@@ -498,8 +545,8 @@ body{
       }
       span{
         color: #fff;
-        font-size: 2rem;
-        line-height: 3rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
         margin-left: 1rem;
       }
     }

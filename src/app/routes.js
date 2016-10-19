@@ -4,4 +4,7 @@ export default (app) => {
     res.render('index')
   })
 
+  app.get('/clock', (req, res)=>{
+    res.render('clock')
+  })
 }
