@@ -147,6 +147,8 @@ body{
 }
 
 #profile{
+  margin-top: .5rem;
+  box-shadow: 0px 0px 3rem .5rem #000;
   background-color: darken($bg, 1);
   .cover{
     width: 100%;
@@ -248,8 +250,8 @@ body{
   @extend .title_line;
   @extend .colorful_item;
   .title.n{
-    font-size: 5rem;
-    line-height: 5rem;
+    font-size: 5.75rem;
+    line-height: 5.75rem;
   }
   .projects{
     margin-top: 5%;
@@ -338,6 +340,13 @@ body{
     .modal_header{
       background-color: #fff;
       color: $bg;
+      .modal_title{
+        @extend .disable-select;
+        cursor: default;
+        padding-left: .5rem;
+        font-size: .85rem;
+        line-height: 1.7rem;
+      }
       .close_modal{
         @extend .disable-select;
         cursor: default;
@@ -541,6 +550,15 @@ body{
   &.full{
     height: 100%;
   }
+  &.reserved{
+    width: 0% !important;
+  }
+  &.fixed{
+    position: fixed !important;
+  }
+  &.absolute{
+    position: absolute !important;
+  }
   &.min{
     min-height: 100%;
   }
@@ -549,5 +567,8 @@ body{
   }
   &.moreDark{
     background-color: darken($bg, 1.5);
+  }
+  &.transparentcy{
+    background-color: transparent;
   }
 }

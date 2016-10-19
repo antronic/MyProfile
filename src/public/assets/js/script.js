@@ -1,5 +1,6 @@
 // modal project
 $('#projects .projects .project .item a').on('click', (e)=>{
+  e.preventDefault()
   let started = $(e.target).parentsUntil('#stated_modal')
   $.getJSON('/assets/data_modal.json', (data)=>{
     let contents = data[$(e.target).data('modal')]

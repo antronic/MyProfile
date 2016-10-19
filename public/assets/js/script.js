@@ -1,5 +1,5 @@
 'use strict';// modal project
-$('#projects .projects .project .item a').on('click',function(e){var started=$(e.target).parentsUntil('#stated_modal');$.getJSON('/assets/data_modal.json',function(data){var contents=data[$(e.target).data('modal')];$('.projects').addClass('hide');//init body
+$('#projects .projects .project .item a').on('click',function(e){e.preventDefault();var started=$(e.target).parentsUntil('#stated_modal');$.getJSON('/assets/data_modal.json',function(data){var contents=data[$(e.target).data('modal')];$('.projects').addClass('hide');//init body
 // init cover
 $('#projects #modal_bg .modal_project .modal_cover img').attr('src','/img/cover/cover_'+contents.cover+'.jpg');var img=document.getElementById('modal_cover_img');RGBaster.colors(img,{paletteSize:10000,exclude:[],success:function success(colors){var bgColor='rgba(0, 0, 0)';// console.log(colors.dominant.name)
 // console.log(colors.secondary)
