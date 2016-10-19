@@ -26,7 +26,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
         var rgb = colors.secondary.match(/\d+/g)
         var yiq = ((rgb[0]*299)+(rgb[1]*587)+(rgb[2]*114))/1000
 
-        var light_border = '1px solid rgba(0, 0, 0, .5)'
+        var light_border = '1px solid rgba(0, 0, 0, .25)'
 
         if(yiq > 128)
           $('.modal_header', started).css('border-bottom', light_border)
@@ -113,7 +113,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
 
     setTimeout(()=>{
       $('#projects #modal_bg .modal_project').addClass('show')
-    
+
     }, 300)
   })
 })

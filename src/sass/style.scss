@@ -46,6 +46,11 @@ body{
   user-select: none;
 }
 
+.disable-drag{
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
 .title_line{
   p.title.m{
     border-top: 1px solid #fff;
@@ -295,28 +300,28 @@ body{
     }
   }
   .modal_project{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .35);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .45);
     color: #fff;
     position: relative;
-    min-width: 100%;
+    // min-width: 100%;
+    max-width: 0%;
     margin-top: 3.25rem;
     background-color: $bg;
     border-width: 0px;
-    border-style: solid;
+    border-style: none;
     border-color: #fff;
-    overflow-y: auto;
+    overflow-y: hidden;
     max-height: 0px;
     opacity: .5;
     transition: all ease .5s;
     &.show{
       opacity: 1;
       border-width: 1px;
+      max-width: 100%;
       max-height: 700px;
       .modal_header{
         .close_modal{
           outline: none;
-          font-size: 1.5rem;
-          padding: .35rem .5rem;
           background-color: transparent;
           color: #000;
           &:hover{
@@ -334,23 +339,29 @@ body{
       background-color: #fff;
       color: $bg;
       .close_modal{
+        @extend .disable-select;
         cursor: default;
         outline: none;
-        font-size: 1.5rem;
-        padding: .35rem .5rem;
+        font-size: 1rem;
+        line-height: .75rem;
+        padding: .5rem 1.25rem .45rem 1.25rem;
         color: #fff;
         background-color: darken($close_red, 30);
       }
     }
     .modal_cover{
-      // border-bottom: 1px solid $primary;
+      @extend .disable-select;
       border-bottom: 1px solid #fff;
       img{
+        @extend .disable-drag;
         width: 100%;
+
       }
     }
     .modal_body{
       padding: 1.5rem 1rem;
+      max-height: 30rem;
+      overflow-y: auto;
       .duty{
         div{
           display: inline-block;
