@@ -23,6 +23,7 @@ $close_red: #FB6E6D;
 
 html,
 body{
+  background-color: $bg;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
   color: #FFF;
@@ -84,6 +85,8 @@ body{
 /** MIXIN */
 
 #welcome{
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
   .header{
     padding: 1rem .5rem;
     .social{
@@ -151,6 +154,9 @@ body{
   box-shadow: 0px 0px 3rem .5rem #000;
   background-color: darken($bg, 1);
   .cover{
+    -webkit-transition: opacity ease .5s;
+    transition: opacity ease .5s;
+    opacity: 0;
     width: 100%;
     background-image: url('/img/ocean1.jpg');
     background-size: cover;
@@ -212,8 +218,12 @@ body{
       .progress{
         height: 1.5rem;
         background-color: $progress_bar_bg;
+        outline: none;
         .progress-meter{
+          -webkit-transition: width ease-out 2s;
+          transition: width ease-out 1s;
           background-color: $progress_bar_color;
+          outline: none;
         }
       }
       .exp{
@@ -265,8 +275,30 @@ body{
       margin-top: 2rem;
     }
     .item{
-      opacity: 0.25;
+      opacity: 0.15;
       padding: .9375rem;
+      transition: all ease .25s;
+      .zoom{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        text-align: center;
+        padding-top: 6rem;
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 0px 0px 10px #000;
+      }
+      &.arrived{
+        opacity: 0.65;
+        transform: scale(1.025);
+      }
+      &.onHoverThis{
+        opacity: 1;
+      }
+      &.onHoverOther{
+        opacity: 0.15;
+      }
       img{
         width: 100%;
         transition: all ease .5s;
@@ -274,6 +306,7 @@ body{
       &:hover,
       &:focus{
         opacity: 1;
+        transition: none;
         img{
           box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, .25);
         }
@@ -281,9 +314,13 @@ body{
       &:active{
         img{
           transform: scale(.95);
-          transition: all ease .25s;
+          transition: all ease .15s;
         }
       }
+    }
+    .item:hover ~ .item,
+    .item:focus ~.item {
+      opacity: 0.05;
     }
   }
   #modal_bg{
