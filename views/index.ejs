@@ -31,9 +31,6 @@
     <meta property="og:locale" content="en_US">
 
     <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/assets/css/style.min.css">
-    <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css">
     <title>MyProfile | Jirachai Chansivanon</title>
   </head>
   <body>
@@ -68,24 +65,28 @@
           </a>
         </div>
         <div class="small-12 m show-for-small-only columns text-right social">
-          <a href="https://fb.com/JobAntronic">
-            <button class="fa fa-facebook-square" aria-hidden="true"></button>
-          </a>
-          <a href="https://twitter.com/JobAntronic">
-            <button class="fa fa-twitter-square" aria-hidden="true"></button>
-          </a>
-          <a href="https://www.instagram.com/jobantronic/">
-            <button class="fa fa-instagram" aria-hidden="true"></button>
-          </a>
-          <a href="https://github.com/antronic/">
-            <button class="fa fa-github-square" aria-hidden="true"></button>
-          </a>
-          <a href="mailto:antronic.inc@gmail.com">
-            <button class="fa fa-envelope" aria-hidden="true"></button>
-          </a>
-          <a href="skype:jobantronic?call">
-            <button class="fa fa-skype" aria-hidden="true"></button>
-          </a>
+          <div class="row">
+            <a href="https://fb.com/JobAntronic">
+              <button class="fa fa-facebook-square" aria-hidden="true"></button>
+            </a>
+            <a href="https://twitter.com/JobAntronic">
+              <button class="fa fa-twitter-square" aria-hidden="true"></button>
+            </a>
+            <a href="https://www.instagram.com/jobantronic/">
+              <button class="fa fa-instagram" aria-hidden="true"></button>
+            </a>
+          </div>
+          <div class="row">
+            <a href="https://github.com/antronic/">
+              <button class="fa fa-github-square" aria-hidden="true"></button>
+            </a>
+            <a href="mailto:antronic.inc@gmail.com">
+              <button class="fa fa-envelope" aria-hidden="true"></button>
+            </a>
+            <a href="skype:jobantronic?call">
+              <button class="fa fa-skype" aria-hidden="true"></button>
+            </a>
+          </div>
         </div>
       </div>
       <div class="content hide-for-small-only row expanded">
@@ -519,6 +520,25 @@
     <!-- <div class="page full transparentcy">
       <div class="page full reserved transparentcy"></div>
     </div> -->
+
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" href="/assets/css/style.min.css">
+      <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="screen" title="no title">
+      <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
   </body>
 
   <script src="/libs/jquery/dist/jquery.min.js"></script>
