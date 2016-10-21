@@ -44,6 +44,9 @@
       "<strong>Junior Programmer Camp</strong> or <strong>JPC</strong> is the camp for high school's students established by SIT@KMUTT that's running by Computer Science's students. This camp aims to Computer Science's life in an university, and programmer real life."
     ],
     "orbit": [
+      ["jpc12_1", "Staff Page and Welcome Page"],
+      ["jpc12_2", "Server and Contents Settings in Staff Page"],
+      ["jpc12_3", "Menu bar in Staff Page"]
     ]
   },
   "antronic":{
@@ -92,6 +95,7 @@
       "<strong><a href='http://camphub.in.th'><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
+      ["camphub_1", "CampHUB Team"]
     ]
   }
 }
