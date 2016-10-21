@@ -4,6 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Jirachai's Profile | Jirachai Chansivanon">
+    <meta name="robots" content="index, nofollow">
+    <meta name="author" content="Jirachai Chansivanon">
+
+    <!-- html itemscope itemtype="http://schema.org/{CONTENT_TYPE}" -->
+    <meta itemprop="name" content="My Profile | Jirachai Chansivanon">
+    <meta itemprop="description" content="Jirachai's Profile | Jirachai Chansivanon">
+    <meta itemprop="image" content="/img/social/fb_img.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:site" content="Jirachai's Profile | Jirachai Chansivanon">
+    <meta name="twitter:title" content="My Profile | Jirachai Chansivanon">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="Jirachai Chansivanon">
+    <meta name="twitter:image:src" content="/img/social/twitter_img.jpg">
+
+    <!-- Open Graph General (Facebook & Pinterest) -->
+    <meta property="og:url" content="https://antronic.me/" />
+    <meta property="og:title" content="MyProfile | Jirachai Chansivanon">
+    <meta property="og:description" content="Jirachai's Profile | Jirachai Chansivanon">
+    <meta property="og:site_name" content="antronic">
+    <meta property="og:image" content="/img/social/fb_img.jpg">
+    <meta property="og:type" content="portfolio">
+    <meta property="og:locale" content="en_US">
+
     <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="/assets/css/style.min.css">
     <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="screen" title="no title">
@@ -146,7 +171,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 90%"></div>
+                    <div class="progress-meter" val="90" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -156,7 +181,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 80%"></div>
+                    <div class="progress-meter" val="80" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -166,7 +191,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 25%"></div>
+                    <div class="progress-meter" val="25" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -180,7 +205,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 85%"></div>
+                    <div class="progress-meter" val="85" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -190,7 +215,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 80%"></div>
+                    <div class="progress-meter" val="80" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -200,7 +225,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" style="width: 82%"></div>
+                    <div class="progress-meter" val="82" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -459,7 +484,6 @@
     </div>
 
     <!-- <div class="page full transparentcy">
-
       <div class="page full reserved transparentcy"></div>
     </div> -->
   </body>
@@ -479,10 +503,76 @@
 
   <script type="text/javascript">
   $(document).ready(function(){
-    $('a').smoothScroll()
-    $('#burger').click(function(){
-      $(this).toggleClass('open');
-    });
+
+    $('meta[property="og:url"]').attr('content', $(location).attr('href'))
+    $('div, a').smoothScroll()
+
+    $('.project .item').hover(function(){
+
+      $(this).siblings().addClass('onHoverOther')
+      $(this).addClass('onHoverThis')
+    }, function(){
+      $(this).siblings().removeClass('onHoverOther')
+      $(this).removeClass('onHoverThis')
+    })
+
+    onScrollProject()
+    $(document).on("scroll", onScrollProject);
+    function onScrollProject(event){
+        var scrollPos = $(document).scrollTop();
+
+        var currLink = $('.project .item');
+        var refElement = $('#projects');
+        if (refElement.position().top - 100 <= scrollPos && refElement.position().top + (refElement.height() - 300) > scrollPos) {
+            currLink.addClass("arrived");
+        }
+        else{
+            currLink.removeClass("arrived");
+        }
+    }
+
+    onScrollWelcome()
+    $(document).on("scroll", onScrollWelcome);
+    function onScrollWelcome(event){
+        var scrollPos = $(document).scrollTop();
+
+        var currLink = $('#welcome');
+        var refElement = $('#welcome');
+        if (refElement.position().top + (refElement.height() - 300) > scrollPos) {
+            var cal = (100 - (scrollPos / (refElement.position().top + refElement.height() - 300) * 100))
+            currLink.css('transform', 'scale(' + ((cal / 100)) + ')')
+            currLink.css('-webkit-transform', 'scale(' + ((cal / 100)) + ')')
+            currLink.css('opacity', cal / 100)
+        }
+    }
+
+    onScrollProgress()
+    $(document).on("scroll", onScrollProgress);
+    function onScrollProgress(event){
+        var scrollPos = $(document).scrollTop();
+
+        var currLink = $('.progress-meter');
+        var refElement = $('.progress-meter');
+        var refElement2 = $('#profile');
+        if (refElement.position().top + 50 <= scrollPos) {
+            currLink.each(function(i){
+              $(this).css('width', $(this).attr('val') + '%')
+            })
+        }
+    }
+
+    onScrollProfile()
+    $(document).on("scroll", onScrollProfile);
+    function onScrollProfile(event){
+        var scrollPos = $(document).scrollTop();
+
+        var currLink = $('#profile .cover');
+        var refElement = $('#profile');
+        if (scrollPos > 50) {
+            currLink.css('opacity', 1)
+        }
+    }
+
   });
   </script>
   <script type="text/javascript">
