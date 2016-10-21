@@ -1,7 +1,17 @@
+let modalIsOpen = false
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    if(modalIsOpen)
+      closeModal($('#projects #modal_bg'))
+  }
+})
+
 // modal project
 $('#projects .projects .project .item a').on('click', (e)=>{
   e.preventDefault()
   let started = $(e.target).parentsUntil('#stated_modal')
+  started.find('#loading_modal').addClass('show'),
   $.getJSON('/assets/data_modal.json', (data)=>{
     let contents = data[$(e.target).data('modal')]
 
@@ -74,7 +84,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
       var bullets_html = ''
       if(contents.orbit.length > 0 && contents.orbit.length <= 1){
         orbit_html += '<li class="is-active orbit-slide">'
-        orbit_html += '<img class="orbit-image" src="/img/content/'+ orbit + '.jpg" alt="slide'+ 1 +'">'
+        orbit_html += '<img class="orbit-image" src="/img/content/'+ orbit + '.jpg" alt="slide'+ 1 +' - '+ caption +'">'
         orbit_html += '<figcaption class="orbit-caption">'+ caption +'</figcaption>'
         orbit_html += '</li>'
 
@@ -83,7 +93,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
         for( i = 0; i < contents.orbit.length; i++){
           if(i == 0){
             orbit_html += '<li class="is-active orbit-slide">'
-            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i][0] + '.jpg" alt="slide'+ (i+1) +'">'
+            orbit_html += '<img class="orbit-image" src="/img/content/'+ contents.orbit[i][0] + '.jpg" alt="slide'+ (i+1) +' - '+ caption +'">'
             orbit_html += '<figcaption class="orbit-caption">' + contents.orbit[i][1] + '</figcaption>'
             orbit_html += '</li>'
 
@@ -114,15 +124,18 @@ $('#projects .projects .project .item a').on('click', (e)=>{
   })
 
     .done(() => {
+      started.find('#loading_modal').removeClass('show'),
       $('#projects #modal_bg').addClass('show')
 
       setTimeout(()=>{
         $('#projects #modal_bg .modal_project').addClass('show')
 
       }, 300)
+      modalIsOpen = true
     })
 
     .fail((data)=>{
+      started.find('#loading_modal').removeClass('show')
       var dutyHTML = ''
       dutyHTML += '<p class="item">Not Found</p>'
 
@@ -130,12 +143,20 @@ $('#projects .projects .project .item a').on('click', (e)=>{
       html += '<h3>Status Code ' + data.status + '</h3>'
       html += '<h5>Status Text' + data.statusText + '</h3>'
 
+      var orbit_item = ''
+      orbit_item += '<li class="is-active orbit-slide">'
+      orbit_item += '<img class="orbit-image" src="/img/content/none.jpg" alt="slide1">'
+      orbit_item += '<figcaption class="orbit-caption">No Photo</figcaption>'
+      orbit_item += '</li>'
+
       $('#projects #modal_bg').addClass('show')
       $('#projects #modal_bg .modal_project .modal_cover img').attr('src', '/img/cover/cover_error.jpg')
       $('#projects #modal_bg .modal_project .modal_header .modal_title').text('Error'),
       $('#projects #modal_bg .modal_project .modal_body .modal_content').html(html),
       $('#projects #modal_bg .modal_project .modal_body .duty .items').html(dutyHTML),
+      $('#projects #modal_bg .modal_project .modal_body .orbit .orbit-container').html(dutyHTML),
       $('#projects #modal_bg .modal_project').addClass('show')
+      modalIsOpen = true
     })
 })
 
@@ -162,6 +183,7 @@ let closeModal = (e) =>{
     $(e).removeClass('show')
     $('.projects').removeClass('hide')
   }, 500)
+  modalIsOpen = false
 }
 
 //
