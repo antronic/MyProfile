@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="keywords" content="Jirachai Chansivanon, JobAntronic, antronic, Developer, Web Developer, NodeJS Developer, Job, Job Jirachai, antronic0inc, antronic's channel, profile, job profile, jirahcia profile">
     <meta name="description" content="Jirachai's Profile | Jirachai Chansivanon">
     <meta name="robots" content="index, nofollow">
     <meta name="author" content="Jirachai Chansivanon">
@@ -12,20 +13,20 @@
     <!-- html itemscope itemtype="http://schema.org/{CONTENT_TYPE}" -->
     <meta itemprop="name" content="My Profile | Jirachai Chansivanon">
     <meta itemprop="description" content="Jirachai's Profile | Jirachai Chansivanon">
-    <meta itemprop="image" content="/img/social/fb_img.jpg">
+    <meta itemprop="image" content="https://profile.antronic.me/img/social/fb_img.jpg">
     <!-- Twitter -->
-    <meta name="twitter:site" content="Jirachai's Profile | Jirachai Chansivanon">
+    <meta name="twitter:site" content="https://profile.antronic.me/">
     <meta name="twitter:title" content="My Profile | Jirachai Chansivanon">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:description" content="Jirachai's Profile | Jirachai Chansivanon">
     <meta name="twitter:creator" content="Jirachai Chansivanon">
-    <meta name="twitter:image:src" content="/img/social/twitter_img.jpg">
+    <meta name="twitter:image:src" content="https://profile.antronic.me/img/social/twitter_img.jpg">
 
     <!-- Open Graph General (Facebook & Pinterest) -->
-    <meta property="og:url" content="https://antronic.me/" />
+    <meta property="og:url" content="https://profile.antronic.me/" />
     <meta property="og:title" content="MyProfile | Jirachai Chansivanon">
     <meta property="og:description" content="Jirachai's Profile | Jirachai Chansivanon">
     <meta property="og:site_name" content="antronic">
-    <meta property="og:image" content="/img/social/fb_img.jpg">
+    <meta property="og:image" content="https://profile.antronic.me/img/social/fb_img.jpg">
     <meta property="og:type" content="portfolio">
     <meta property="og:locale" content="en_US">
 
@@ -36,9 +37,17 @@
     <title>MyProfile | Jirachai Chansivanon</title>
   </head>
   <body>
-    <div id="welcome" class="page full fixed default">
+    <!-- <div class="wrapper_share">
+      <div class="shareter">
+        <i class="fa fa-share"></i>
+      </div>
+      <div class="share_fb">
+        <i class="fa fa-facebook"></i>
+      </div>
+    </div> -->
+    <section id="welcome" class="page full fixed default">
       <div class="header row expanded">
-        <div class="small-12 columns text-right social">
+        <div class="medium-12 hide-for-small-only columns text-right social">
           <a href="https://fb.com/JobAntronic">
             <i class="fa fa-facebook-square" aria-hidden="true"></i>
           </a>
@@ -58,6 +67,26 @@
             <i class="fa fa-skype" aria-hidden="true"></i>
           </a>
         </div>
+        <div class="small-12 m show-for-small-only columns text-right social">
+          <a href="https://fb.com/JobAntronic">
+            <button class="fa fa-facebook-square" aria-hidden="true"></button>
+          </a>
+          <a href="https://twitter.com/JobAntronic">
+            <button class="fa fa-twitter-square" aria-hidden="true"></button>
+          </a>
+          <a href="https://www.instagram.com/jobantronic/">
+            <button class="fa fa-instagram" aria-hidden="true"></button>
+          </a>
+          <a href="https://github.com/antronic/">
+            <button class="fa fa-github-square" aria-hidden="true"></button>
+          </a>
+          <a href="mailto:antronic.inc@gmail.com">
+            <button class="fa fa-envelope" aria-hidden="true"></button>
+          </a>
+          <a href="skype:jobantronic?call">
+            <button class="fa fa-skype" aria-hidden="true"></button>
+          </a>
+        </div>
       </div>
       <div class="content hide-for-small-only row expanded">
         <p id="bigguy" class="small-12 medium-6 medium-offset-6">
@@ -75,15 +104,13 @@
           I'M <span id="myname">JIRACHAI CHANSIVANON</span>
         </p>
       </div>
-      <div id="start">
-        <a href="#profile">
+        <a id="start" href="#profile">
           <div id="triangle">
           </div>
         </a>
-      </div>
-    </div>
-    <div class="page full reserved transparentcy"></div>
-    <div id="profile" class="page min">
+    </section>
+    <section class="page full reserved transparentcy"></section>
+    <section id="profile" class="page min">
       <div class="cover expanded row">
         <div class="profile_img small-6 small-offset-3 medium-2 medium-offset-0 columns">
           <img src="/img/profile_img.jpg" alt="Jirachai Chansivanon">
@@ -234,8 +261,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="skills" class="page min default">
+    </section>
+    <section id="skills" class="page min default">
       <div class="container expanded">
         <div class="row">
           <p class="title hide-for-small-only">Skills</p>
@@ -273,8 +300,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="tools" class="page min default">
+    </section>
+    <section id="tools" class="page min default">
       <div class="container">
         <div class="row">
           <p class="title hide-for-small-only">Tools</p>
@@ -318,12 +345,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="projects" class="page min default">
+    <section id="projects" class="page min default">
       <!-- MODALs -->
       <div id="started_modal">
         <div id="modal_bg">
+
+          <div class="medium-8 medium-offset-2 small-10 small-offset-1">
+            <div id="loading_modal">
+              Loading...
+            </div>
+          </div>
+
           <div class="medium-8 medium-offset-2 small-10 small-offset-1">
             <div class="modal_project">
               <div class="modal_header row">
@@ -341,8 +375,7 @@
                 <div class="small-12 columns duty">
                   <p>Duty : </p>
                   <div class="items">
-                    <p class="item">test</p>
-                    <p class="item">test</p>
+                    <p class="item">Not Found</p>
                   </div>
                 </div>
                 <div class="modal_content medium-7 columns">
@@ -355,11 +388,11 @@
                     <ul class="orbit-container">
                       <li class="is-active orbit-slide">
                         <img class="orbit-image" src="/img/content/none.jpg" alt="slide1">
-                        <figcaption class="orbit-caption">1</figcaption>
+                        <figcaption class="orbit-caption">No Photo</figcaption>
                       </li>
                       <li class="orbit-slide">
-                        <img class="orbit-image" src="/img/content/DEKCOMSTORY.jpg" alt="slide2">
-                        <figcaption class="orbit-caption">2</figcaption>
+                        <img class="orbit-image" src="/img/content/none.jpg" alt="slide2">
+                        <figcaption class="orbit-caption">No Photo</figcaption>
                       </li>
                     </ul>
 
@@ -420,9 +453,9 @@
         </div>
       </div>
 
-    </div>
+    </section>
 
-    <div id="contact" class="page min moreDark">
+    <section id="contact" class="page min moreDark">
       <div class="header row expanded">
       </div>
       <div class="content row expanded">
@@ -481,7 +514,7 @@
         </div>
 
       </div>
-    </div>
+    </section>
 
     <!-- <div class="page full transparentcy">
       <div class="page full reserved transparentcy"></div>
@@ -501,11 +534,26 @@
   <script src="/libs/foundation-sites/dist/foundation.min.js"></script>
   <script src="/assets/js/script.js"></script>
 
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86104975-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
   <script type="text/javascript">
   $(document).ready(function(){
 
     $('meta[property="og:url"]').attr('content', $(location).attr('href'))
-    $('div, a').smoothScroll()
+    $('#modal_bg, a').smoothScroll()
+    $('.shareter, .shareter i').click(function(e){
+      $(this).toggleClass('open')
+    })
 
     $('.project .item').hover(function(){
 
