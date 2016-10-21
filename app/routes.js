@@ -1,1 +1,1 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});exports.default=function(app){app.get('/',function(req,res){res.render('index')});app.get('/clock',function(req,res){res.render('clock')})};
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});exports.default=function(app){app.get('/',function(req,res){res.render('index');var fullUrl=req.protocol+'://'+req.get('host')+req.originalUrl;console.log(fullUrl)});app.get('/clock',function(req,res){res.render('clock')})};
