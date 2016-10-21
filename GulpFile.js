@@ -14,7 +14,7 @@ var img_src = './src/img/**.+(jpg|png|gif|jpeg|svg)'
 
 var img_dest = './public/img/'
 
-var port = 9000
+var port = 2000
 var ip = '127.0.0.1'
 var proxy = ip+':'+port
 

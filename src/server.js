@@ -5,10 +5,12 @@ import http from 'http'
 let server = http.createServer(app)
 import path from 'path'
 import bodyParser from 'body-parser'
+import favicon from 'serve-favicon';
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(favicon(path.join(__dirname, '/public/job_profile.ico')));
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))

@@ -5,6 +5,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
   $.getJSON('/assets/data_modal.json', (data)=>{
     let contents = data[$(e.target).data('modal')]
 
+    $('#projects #modal_bg .modal_project .modal_header .modal_title').text($(e.target).data('modal'))
     $('.projects').addClass('hide')
 
     //init body
@@ -107,16 +108,35 @@ $('#projects .projects .project .item a').on('click', (e)=>{
 
       $('#modal_bg .modal_project .modal_body .orbit .orbit-container', started).html(orbit_html)
       $('#modal_bg .modal_project .modal_body .orbit .orbit-bullets', started).html(bullets_html)
+
       new Foundation.Orbit($(".orbit"))
     }
-  }).done(() => {
-    $('#projects #modal_bg').addClass('show')
-
-    setTimeout(()=>{
-      $('#projects #modal_bg .modal_project').addClass('show')
-
-    }, 300)
   })
+
+    .done(() => {
+      $('#projects #modal_bg').addClass('show')
+
+      setTimeout(()=>{
+        $('#projects #modal_bg .modal_project').addClass('show')
+
+      }, 300)
+    })
+
+    .fail((data)=>{
+      var dutyHTML = ''
+      dutyHTML += '<p class="item">Not Found</p>'
+
+      var html = ''
+      html += '<h3>Status Code ' + data.status + '</h3>'
+      html += '<h5>Status Text' + data.statusText + '</h3>'
+
+      $('#projects #modal_bg').addClass('show')
+      $('#projects #modal_bg .modal_project .modal_cover img').attr('src', '/img/cover/cover_error.jpg')
+      $('#projects #modal_bg .modal_project .modal_header .modal_title').text('Error'),
+      $('#projects #modal_bg .modal_project .modal_body .modal_content').html(html),
+      $('#projects #modal_bg .modal_project .modal_body .duty .items').html(dutyHTML),
+      $('#projects #modal_bg .modal_project').addClass('show')
+    })
 })
 
 $('#projects #modal_bg').on('click', (e)=>{
@@ -135,57 +155,61 @@ $('.close_modal').on('click', (e)=>{
 let closeModal = (e) =>{
   $('.modal_project', e).removeClass('show')
   // console.log(e)
+  $('html, body').animate({
+    scrollTop: $('#projects').offset().top
+  }, 500)
   setTimeout(()=>{
     $(e).removeClass('show')
     $('.projects').removeClass('hide')
   }, 500)
 }
 
-let getAverageRGB = (imgEl) => {
-
-  var blockSize = 5, // only visit every 5 pixels
-    defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
-    canvas = document.createElement('canvas'),
-    context = canvas.getContext && canvas.getContext('2d'),
-    data, width, height,
-    i = -4,
-    length,
-    rgb = {r:0,g:0,b:0},
-    count = 0
-
-  if(!context) {
-    return defaultRGB
-  }
-
-  height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height
-  width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width
-
-  context.drawImage(imgEl, 0, 0)
-
-  try {
-    data = context.getImageData(0, 0, width, height)
-  } catch(e) {
-      /* security error, img on diff domain */
-    alert('x')
-    return defaultRGB
-  }
-
-  length = data.data.length
-
-  while ( (i += blockSize * 4) < length ) {
-    ++count
-    rgb.r += data.data[i]
-    rgb.g += data.data[i+1]
-    rgb.b += data.data[i+2]
-  }
-
-  // ~~ used to floor values
-  rgb.r = ~~(rgb.r/count)
-  rgb.g = ~~(rgb.g/count)
-  rgb.b = ~~(rgb.b/count)
-
-  return rgb
-
-
-//thank you : http://jsfiddle.net/xLF38/818/
-}
+//
+// let getAverageRGB = (imgEl) => {
+//
+//   var blockSize = 5, // only visit every 5 pixels
+//     defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
+//     canvas = document.createElement('canvas'),
+//     context = canvas.getContext && canvas.getContext('2d'),
+//     data, width, height,
+//     i = -4,
+//     length,
+//     rgb = {r:0,g:0,b:0},
+//     count = 0
+//
+//   if(!context) {
+//     return defaultRGB
+//   }
+//
+//   height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height
+//   width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width
+//
+//   context.drawImage(imgEl, 0, 0)
+//
+//   try {
+//     data = context.getImageData(0, 0, width, height)
+//   } catch(e) {
+//       /* security error, img on diff domain */
+//     alert('x')
+//     return defaultRGB
+//   }
+//
+//   length = data.data.length
+//
+//   while ( (i += blockSize * 4) < length ) {
+//     ++count
+//     rgb.r += data.data[i]
+//     rgb.g += data.data[i+1]
+//     rgb.b += data.data[i+2]
+//   }
+//
+//   // ~~ used to floor values
+//   rgb.r = ~~(rgb.r/count)
+//   rgb.g = ~~(rgb.g/count)
+//   rgb.b = ~~(rgb.b/count)
+//
+//   return rgb
+//
+//
+// //thank you : http://jsfiddle.net/xLF38/818/
+// }
