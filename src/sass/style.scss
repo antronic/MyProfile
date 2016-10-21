@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
+// @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
 // @import 'https://fonts.googleapis.com/css?family=Kanit:300,400,600&subset=thai';
 
 // $bg: #1D1E20;
@@ -84,12 +84,96 @@ body{
 
 /** MIXIN */
 
+.wrapper_share{
+  position: fixed;
+  z-index: 10249999;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  .shareter{
+    background-color: $primary;
+    color: $bg;
+    font-size: 1rem;
+    line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    transform: rotate(0deg);
+    transition: all ease .25s;
+    -webkit-transition: all ease .25s;
+    i{
+      transition: all ease .25s;
+      -webkit-transition: all ease .25s;
+    }
+    &:before {
+      border: 1px solid $primary;
+      content: "";
+      position: absolute;
+      top: 0rem;
+      bottom: 0rem;
+      left: 0rem;
+      right: 0rem;
+      transition: all ease .25s;
+    }
+    &:hover,
+    &:focus{
+      &:before{
+        top: -.3rem;
+        bottom: -.3rem;
+        left: -.3rem;
+        right: -.3rem;
+      }
+    }
+    &:active{
+      &:before{
+        top: -.13rem;
+        bottom: -.13rem;
+        left: -.13rem;
+        right: -.13rem;
+      }
+    }
+
+    &.open{
+      transform: rotate(45deg);
+      i{
+        transform: rotate(-45deg);
+      }
+      &:before{
+        top: -.25rem;
+        bottom: -.25rem;
+        left: -.25rem;
+        right: -.25rem;
+      }
+      &:active{
+        &:before{
+          top: -.13rem;
+          bottom: -.13rem;
+          left: -.13rem;
+          right: -.13rem;
+        }
+      }
+    }
+  }
+  .share_fb{
+    margin-left: 1.5rem;
+    color: #000;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    background-color: $primary;
+  }
+}
+
 #welcome{
   -webkit-transition: all ease .25s;
   transition: all ease .25s;
   .header{
     padding: 1rem .5rem;
     .social{
+      outline: none;
       font-size: 1.225rem;
       color: $primary;
       a{
@@ -97,8 +181,29 @@ body{
         i{
           padding: 0rem .075rem;
         }
+        a+a{
+          margin-left: .5rem;
+        }
         &:hover{
           color: lighten($primary, 15);
+        }
+      }
+      &.m{
+        text-align: center;
+        font-size: 2rem;
+        button{
+          padding: .5rem;
+        }
+        a{
+          &:hover{
+            color: $bg;
+            button{
+              background-color: $primary;
+            }
+          }
+        }
+        a+a{
+          margin-left: .5rem;
         }
       }
     }
@@ -303,25 +408,51 @@ body{
         width: 100%;
         transition: all ease .5s;
       }
+      &:after{
+        border: 1px solid $primary;
+        content: "";
+        position: absolute;
+        top: -.75rem;
+        bottom: -.75rem;
+        left: -.75rem;
+        right: -.75rem;
+        opacity: 0;
+        transition: all ease .25s;
+        z-index: -11111;
+      }
       &:hover,
       &:focus{
         opacity: 1;
         transition: none;
+        &:after{
+          opacity: 1;
+          top: .25rem;
+          bottom: .25rem;
+          left: .25rem;
+          right: .25rem;
+        }
         img{
           box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, .25);
         }
       }
       &:active{
         img{
-          transform: scale(.95);
+          // transform: scale(.95);
           transition: all ease .15s;
+        }
+        &:after{
+          opacity: 1;
+          top: .75rem;
+          bottom: .75rem;
+          left: .75rem;
+          right: .75rem;
         }
       }
     }
-    .item:hover ~ .item,
-    .item:focus ~.item {
-      opacity: 0.05;
-    }
+    // .item:hover ~ .item,
+    // .item:focus ~.item {
+    //   opacity: 0.05;
+    // }
   }
   #modal_bg{
     position: absolute;
@@ -336,6 +467,25 @@ body{
     &.show{
       opacity: 1;
       visibility: visible;
+    }
+    #loading_modal{
+      position: relative;
+      text-align: center;
+      color: $bg;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      background-color: #fff;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0, .45);
+      min-height: 0%;
+      max-height: 0px;
+      opacity: 0;
+      transition: all ease .5s;
+      -webkit-transition: all ease .5s;
+      &.show{
+        opacity: 1;
+        min-height: 100%;
+        max-height: 100px;
+      }
     }
   }
   .modal_project{
@@ -607,5 +757,21 @@ body{
   }
   &.transparentcy{
     background-color: transparent;
+  }
+}
+
+// animation
+@keyframes wave {
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(.9);
+  }
+  100%{
+    transform: scale(.99);
   }
 }
