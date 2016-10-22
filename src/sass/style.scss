@@ -631,6 +631,11 @@ section{
   .header{
     padding: 1rem .5rem;
   }
+  #copyright{
+    bottom: 1rem;
+    position: absolute;
+    width: 100%;
+  }
   .content{
     margin-top: 1rem;
     #bigguy{
