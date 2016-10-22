@@ -30,6 +30,27 @@
     <meta property="og:type" content="portfolio">
     <meta property="og:locale" content="en_US">
 
+    <style type="text/css">
+      html,
+      body{
+        background-color: #1D1E20;
+      }
+      .loading_web{
+        line-height: 3rem;
+        top: 37%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        height: 3rem;
+        position: fixed;
+        img{
+          /*width: 3rem;*/
+        }
+      }
+      section{
+        opacity: 0;
+      }
+    </style>
     <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="screen" title="no title">
     <title>MyProfile | Jirachai Chansivanon</title>
   </head>
@@ -42,6 +63,9 @@
         <i class="fa fa-facebook"></i>
       </div>
     </div> -->
+    <div class="loading_web">
+      <img src="/assets/squares.gif" alt="Loading..." height="3rem">
+    </div>
     <section id="welcome" class="page full fixed default">
       <div class="header row expanded">
         <div class="medium-12 hide-for-small-only columns text-right social">
@@ -64,30 +88,7 @@
             <i class="fa fa-skype" aria-hidden="true"></i>
           </a>
         </div>
-        <div class="small-12 m show-for-small-only columns text-right social">
-          <div class="row">
-            <a href="https://fb.com/JobAntronic">
-              <button class="fa fa-facebook-square" aria-hidden="true"></button>
-            </a>
-            <a href="https://twitter.com/JobAntronic">
-              <button class="fa fa-twitter-square" aria-hidden="true"></button>
-            </a>
-            <a href="https://www.instagram.com/jobantronic/">
-              <button class="fa fa-instagram" aria-hidden="true"></button>
-            </a>
-          </div>
-          <div class="row">
-            <a href="https://github.com/antronic/">
-              <button class="fa fa-github-square" aria-hidden="true"></button>
-            </a>
-            <a href="mailto:antronic.inc@gmail.com">
-              <button class="fa fa-envelope" aria-hidden="true"></button>
-            </a>
-            <a href="skype:jobantronic?call">
-              <button class="fa fa-skype" aria-hidden="true"></button>
-            </a>
-          </div>
-        </div>
+
       </div>
       <div class="content hide-for-small-only row expanded">
         <p id="bigguy" class="small-12 medium-6 medium-offset-6">
@@ -116,7 +117,8 @@
         <div class="profile_img small-6 small-offset-3 medium-2 medium-offset-0 columns">
           <img src="/img/profile_img.jpg" alt="Jirachai Chansivanon">
         </div>
-        <div class="content medium-9 text-left columns hide-for-small-only">
+
+        <div class="content medium-10 text-left columns hide-for-small-only">
           JIRACHAI CHANSIVANON
           <span class="nick">
             (Job)
@@ -554,94 +556,98 @@
   <script src="/libs/foundation-sites/dist/foundation.min.js"></script>
   <script src="/assets/js/script.js"></script>
 
-
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-86104975-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-86104975-1', 'auto');
+    ga('send', 'pageview');
 
   </script>
 
   <script type="text/javascript">
-  $(document).ready(function(){
-
-    $('meta[property="og:url"]').attr('content', $(location).attr('href'))
-    $('#modal_bg, a').smoothScroll()
-    $('.shareter, .shareter i').click(function(e){
-      $(this).toggleClass('open')
+    $(window).load(function(){
     })
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(document).scrollTop(0),
+      $('.loading_web').fadeOut(),
+      $('section').addClass('loaded')
 
-    $('.project .item').hover(function(){
+      $('meta[property="og:url"]').attr('content', $(location).attr('href'))
+      $('#modal_bg, a').smoothScroll()
+      $('.shareter, .shareter i').click(function(e){
+        $(this).toggleClass('open')
+      })
 
-      $(this).siblings().addClass('onHoverOther')
-      $(this).addClass('onHoverThis')
-    }, function(){
-      $(this).siblings().removeClass('onHoverOther')
-      $(this).removeClass('onHoverThis')
-    })
+      onScrollProject()
+      $(document).on("scroll", onScrollProject);
+      function onScrollProject(event){
+          var scrollPos = $(document).scrollTop();
 
-    onScrollProject()
-    $(document).on("scroll", onScrollProject);
-    function onScrollProject(event){
-        var scrollPos = $(document).scrollTop();
+          var currLink = $('.project .item');
+          var refElement = $('#projects');
+          if (refElement.position().top - 100 <= scrollPos && refElement.position().top + (refElement.height() - 300) > scrollPos) {
+              currLink.addClass("arrived");
+              $('#projects .item').hover(function(){
+                $(this).siblings().addClass('onHoverOther')
+                $(this).addClass('onHoverThis')
+              }, function(){
+                $(this).siblings().removeClass('onHoverOther')
+                $(this).removeClass('onHoverThis')
+              })
+          }
+          else{
+              currLink.removeClass("arrived");
+          }
+      }
 
-        var currLink = $('.project .item');
-        var refElement = $('#projects');
-        if (refElement.position().top - 100 <= scrollPos && refElement.position().top + (refElement.height() - 300) > scrollPos) {
-            currLink.addClass("arrived");
-        }
-        else{
-            currLink.removeClass("arrived");
-        }
-    }
+      onScrollWelcome()
+      $(document).on("scroll", onScrollWelcome);
+      function onScrollWelcome(event){
+          var scrollPos = $(document).scrollTop();
 
-    onScrollWelcome()
-    $(document).on("scroll", onScrollWelcome);
-    function onScrollWelcome(event){
-        var scrollPos = $(document).scrollTop();
+          var currLink = $('#welcome');
+          var refElement = $('#welcome');
+          if (refElement.position().top + (refElement.height() - 300) > scrollPos) {
+              var cal = (100 - (scrollPos / (refElement.position().top + refElement.height() - 300) * 100))
+              currLink.css('transform', 'scale(' + ((cal / 100)) + ')')
+              currLink.css('-webkit-transform', 'scale(' + ((cal / 100)) + ')')
+              currLink.css('opacity', cal / 100)
+          }
+      }
 
-        var currLink = $('#welcome');
-        var refElement = $('#welcome');
-        if (refElement.position().top + (refElement.height() - 300) > scrollPos) {
-            var cal = (100 - (scrollPos / (refElement.position().top + refElement.height() - 300) * 100))
-            currLink.css('transform', 'scale(' + ((cal / 100)) + ')')
-            currLink.css('-webkit-transform', 'scale(' + ((cal / 100)) + ')')
-            currLink.css('opacity', cal / 100)
-        }
-    }
+      onScrollProgress()
+      $(document).on("scroll", onScrollProgress);
+      function onScrollProgress(event){
+          var scrollPos = $(document).scrollTop();
 
-    onScrollProgress()
-    $(document).on("scroll", onScrollProgress);
-    function onScrollProgress(event){
-        var scrollPos = $(document).scrollTop();
+          var currLink = $('.progress-meter');
+          var refElement = $('.progress-meter');
+          var refElement2 = $('#profile');
+          if (refElement.position().top + 50 <= scrollPos) {
+              currLink.each(function(i){
+                $(this).css('width', $(this).attr('val') + '%')
+              })
+          }
+      }
 
-        var currLink = $('.progress-meter');
-        var refElement = $('.progress-meter');
-        var refElement2 = $('#profile');
-        if (refElement.position().top + 50 <= scrollPos) {
-            currLink.each(function(i){
-              $(this).css('width', $(this).attr('val') + '%')
-            })
-        }
-    }
+      onScrollProfile()
+      $(document).on("scroll", onScrollProfile);
+      function onScrollProfile(event){
+          var scrollPos = $(document).scrollTop();
 
-    onScrollProfile()
-    $(document).on("scroll", onScrollProfile);
-    function onScrollProfile(event){
-        var scrollPos = $(document).scrollTop();
+          var currLink = $('#profile .cover');
+          var refElement = $('#profile');
+          if (scrollPos > 50) {
+              currLink.css('opacity', 1)
+          }
+      }
 
-        var currLink = $('#profile .cover');
-        var refElement = $('#profile');
-        if (scrollPos > 50) {
-            currLink.css('opacity', 1)
-        }
-    }
-
-  });
+    });
   </script>
   <script type="text/javascript">
     $(document).foundation();
