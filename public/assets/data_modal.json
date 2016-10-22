@@ -9,7 +9,7 @@
       "<strong>TED</strong> is a nonprofit devoted to spreading ideas, usually in the form of short, powerful talks (18 minutes or less). TED began in 1984 as a conference where Technology, Entertainment and Design converged, and today covers almost all topics — from science to business to global issues — in more than 100 languages. Meanwhile, independently run TEDx events help share ideas in communities around the world.",
       "<strong>TEDxKMUTT</strong> is an independent organization devoted to \"Ideas Worth Spreading\". TEDxKMUTT is run by KMUTT students to bring out local ideas to the world.",
       "",
-      "<strong><a href='https://tedxkmutt.com/'><button class='button'>visit website</button></a></strong>"
+      "<strong><a href='https://tedxkmutt.com/' target=\"_blank\"><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
       ["TEDxKMUTT2","TEDxKMUTT Staff Register"],
@@ -27,7 +27,7 @@
       "<strong>Junior Webmaster Camp</strong> or <strong>JWC</strong> is the camp for high school's students established by Thai Webmaster Association, the camp that aims to manages website as real life.",
       "JWC seperates campers into 3 groups, there are <strong>Designer</strong>, <strong>Content</strong>, and <strong>Marketing</strong>.",
       "",
-      "<strong><a href='http://jwc.in.th/'><button class='button'>visit website</button></a></strong>"
+      "<strong><a href='http://jwc.in.th/' target=\"_blank\"><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
     ]
@@ -60,7 +60,7 @@
       "<strong>antronic's channel</strong> becomes to be a Youtube's Partner with Fullscreen, Inc in 2011 that is an early Youtube's Partner in Thailand.",
       "But around this period I don't have much time to do this role, but in the future I plan to do some project with my channel.",
       "",
-      "<strong><a href='https://youtube.com/antronic0inc'><button class='button'>visit website</button></a></strong>"
+      "<strong><a href='https://youtube.com/antronic0inc' target=\"_blank\"><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
     ]
@@ -79,7 +79,7 @@
       "",
       "<strong>DEKCOMSTORY</strong> aims to everyone who interest in computer and technology, we firmly to make a hard to understand computer's story into easy thing.",
       "",
-      "<strong><a href='https://fb.com/dekcomstorypage'><button class='button'>visit website</button></a></strong>"
+      "<strong><a href='https://fb.com/dekcomstorypage' target=\"_blank\"><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
       ["DEKCOMSTORY", "Fanpage"]
@@ -92,7 +92,9 @@
       "Content Creator"
     ],
     "content": [
-      "<strong><a href='http://camphub.in.th'><button class='button'>visit website</button></a></strong>"
+      "For my project that I made with CampHUB is <strong>\"Camp Poster for Post Generator\"</strong>",
+      "",
+      "<strong><a href='http://camphub.in.th' target=\"_blank\"><button class='button'>visit website</button></a></strong>"
     ],
     "orbit": [
       ["camphub_1", "CampHUB Team"]
