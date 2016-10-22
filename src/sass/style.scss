@@ -1,4 +1,4 @@
-// @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i';
 // @import 'https://fonts.googleapis.com/css?family=Kanit:300,400,600&subset=thai';
 
 // $bg: #1D1E20;
@@ -22,13 +22,19 @@ $progress_bar_bg: #4B4C51;
 $close_red: #FB6E6D;
 
 html,
-body{
+body,
+.bodyCtrl{
   background-color: $bg;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
   color: #FFF;
 }
 
+section{
+  &.loaded{
+    opacity: 1;
+  }
+}
 /* FOUNDATION */
 
 .columns{
@@ -168,8 +174,8 @@ body{
 }
 
 #welcome{
-  -webkit-transition: all ease .25s;
-  transition: all ease .25s;
+  -webkit-transition: opacity ease .25s;
+  transition: opacity ease .25s;
   .header{
     padding: 1rem .5rem;
     .social{
@@ -181,12 +187,12 @@ body{
         i{
           padding: 0rem .075rem;
         }
-        a+a{
-          margin-left: .5rem;
-        }
         &:hover{
           color: lighten($primary, 15);
         }
+      }
+      a+a{
+        margin-left: .5rem;
       }
       &.m{
         text-align: center;
@@ -277,7 +283,7 @@ body{
     }
     .content{
       color: #FFF;
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: 600;
       margin-top: 2rem;
       padding-left: 3rem;
