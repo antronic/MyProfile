@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('.loading_web').fadeOut(),
   $('section').addClass('loaded')
 
-  $('meta[property="og:url"]').attr('content', $(location).attr('href'))
+  // $('meta[property="og:url"]').attr('content', $(location).attr('href'))
   $('#modal_bg, a').smoothScroll()
   $('.shareter, .shareter i').click(function(e){
     $(this).toggleClass('open')
