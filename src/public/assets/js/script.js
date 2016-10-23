@@ -86,7 +86,7 @@ $(document).keyup(function(e) {
 
 // modal project
 $('#projects .projects .project .item a').on('click', (e)=>{
-  e.preventDefault()
+  // e.preventDefault()
   let started = $(e.target).parentsUntil('#stated_modal')
   started.find('#loading_modal').addClass('show'),
   $.getJSON('/assets/data_modal.json', (data)=>{
