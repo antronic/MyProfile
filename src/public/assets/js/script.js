@@ -87,6 +87,11 @@ $(document).keyup(function(e) {
   }
 })
 
+$('#projects .projects .project .item, #projects .projects .project .item a img').on('click', (e)=>{
+  let started = $(e.target).parentsUntil('#stated_modal')
+  started.find('#loading_modal').addClass('show')
+})
+
 // modal project
 $('#projects .projects .project .item a').on('click', (e)=>{
   // e.preventDefault()
