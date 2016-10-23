@@ -726,6 +726,7 @@ body,
     .head{
       background-color: $primary;
       // color: lighten($bg, 5);
+      text-transform: uppercase;
       color: $bg;
       font-size: 3rem;
       font-weight: 700;
