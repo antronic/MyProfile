@@ -219,7 +219,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
 
       var html = ''
       html += '<h3>Status Code ' + data.status + '</h3>'
-      html += '<h5>Status Text' + data.statusText + '</h3>'
+      html += '<h5>Status Text ' + data.statusText + '</h3>'
 
       var orbit_item = ''
       orbit_item += '<li class="is-active orbit-slide">'
