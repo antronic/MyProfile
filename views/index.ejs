@@ -37,31 +37,29 @@
       body{
         background-color: #1D1E20;
       }
+      body{
+
+      }
       .loading_web{
         line-height: 3rem;
-        top: 37%;
+        /*top: 37%;*/
+        margin-top: 10rem;
         width: 100%;
         text-align: center;
         color: #fff;
-        height: 3rem;
-        position: fixed;
+        z-index: 1234567899999;
         img{
           /*width: 3rem;*/
         }
       }
       section{
+        display: none;
         opacity: 0;
       }
       section.loaded{
         opacity: 1;
       }
     </style>
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="none" onload="if(media!='all')media='all'">
-      <link rel="stylesheet" href="/assets/css/style.min.css" media="none" onload="if(media!='all')media='all'">
-      <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="none" onload="if(media!='all')media='all'">
-      <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
-    </noscript>
     <title>MyProfile | Jirachai Chansivanon</title>
   </head>
   <body>
@@ -73,7 +71,7 @@
         <i class="fa fa-facebook"></i>
       </div>
     </div> -->
-    <div class="loading_web">
+    <div class="loading_web page full fixed">
       <img src="/assets/squares.gif" alt="Loading..." width="100px">
     </div>
     <section id="welcome" class="page full fixed default">
@@ -549,6 +547,13 @@
       else window.addEventListener('load', loadDeferredStyles);
     </script>
   </body>
+
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/assets/css/style.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
+  </noscript>
 
   <script src="/libs/jquery/dist/jquery.min.js"></script>
   <script async src="/libs/foundation-sites/dist/plugins/foundation.core.js"></script>
