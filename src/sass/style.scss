@@ -725,14 +725,13 @@ body,
     }
     .head{
       background-color: $primary;
-      // color: lighten($bg, 5);
       text-transform: uppercase;
       color: $bg;
       font-size: 3rem;
       font-weight: 700;
       line-height: 2rem;
       padding-top: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.9999rem;
     }
 
   }
