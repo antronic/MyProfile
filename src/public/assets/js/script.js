@@ -1,8 +1,11 @@
-$(document).ready(function(){
+$(window).load((){
   $(document).scrollTop(0),
   $('.loading_web').fadeOut(),
-  $('section').addClass('loaded')
+  $('section').addClass('loaded'),
+})
 
+$(document).ready(function(){
+  $('body').css('display', 'block')
   $('a').smoothScroll()
   $('.shareter, .shareter i').click(function(e){
     $(this).toggleClass('open')
