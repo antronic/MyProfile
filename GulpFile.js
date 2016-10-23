@@ -44,7 +44,7 @@ gulp.task('sass', function(){
             suffix: '.min'
         }))
         .pipe(minifycss())
-        .pipe(sourcemaps.write('../maps', {addComment: true, includeContent: false}))
+        // .pipe(sourcemaps.write('../maps', {addComment: true, includeContent: false}))
         .pipe(gulp.dest(css_output))
         .pipe(browserSync.stream())
 })
