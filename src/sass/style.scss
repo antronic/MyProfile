@@ -383,6 +383,7 @@ body,
     .item{
       opacity: 0.15;
       padding: .9375rem;
+      transform: scale(.95);
       transition: all ease .25s;
       .zoom{
         width: 100%;
@@ -397,7 +398,7 @@ body,
       }
       &.arrived{
         opacity: 0.65;
-        transform: scale(1.025);
+        transform: scale(1);
       }
       &.onHoverThis{
         opacity: 1;
@@ -439,7 +440,7 @@ body,
       }
       &:active{
         img{
-          transform: scale(.95);
+          transform: scale(.9);
           transition: all ease .15s;
         }
         &:after{
