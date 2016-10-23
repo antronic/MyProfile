@@ -1,82 +1,82 @@
-$(window).load((){
+$(window).load(()=>{
   $(document).scrollTop(0),
   $('.loading_web').fadeOut(),
-  $('section').addClass('loaded'),
+  $('section').addClass('loaded')
 })
 
-$(document).ready(function(){
-  $('body').css('display', 'block')
-  $('a').smoothScroll()
-  $('.shareter, .shareter i').click(function(e){
-    $(this).toggleClass('open')
-  })
-
-  onScrollProject()
-  $(document).on('scroll', onScrollProject)
-  function onScrollProject(event){
-    var scrollPos = $(document).scrollTop()
-
-    var currLink = $('.project .item')
-    var refElement = $('#projects')
-    if (refElement.position().top - 100 <= scrollPos && refElement.position().top + (refElement.height() - 300) > scrollPos) {
-      currLink.addClass('arrived')
-      $('#projects .item').hover(function(){
-        $(this).siblings().addClass('onHoverOther')
-        $(this).addClass('onHoverThis')
-      }, function(){
-        $(this).siblings().removeClass('onHoverOther')
-        $(this).removeClass('onHoverThis')
-      })
-    }
-    else{
-      currLink.removeClass('arrived')
-    }
-  }
-
-  onScrollWelcome()
-  $(document).on('scroll', onScrollWelcome)
-  function onScrollWelcome(event){
-    var scrollPos = $(document).scrollTop()
-
-    var currLink = $('#welcome')
-    var refElement = $('#welcome')
-    if (refElement.position().top + (refElement.height() - 300) > scrollPos) {
-      var cal = (100 - (scrollPos / (refElement.position().top + refElement.height() - 300) * 100))
-      currLink.css('transform', 'scale(' + ((cal / 100)) + ')')
-      currLink.css('-webkit-transform', 'scale(' + ((cal / 100)) + ')')
-      currLink.css('opacity', cal / 100)
-    }
-  }
-
-  onScrollProgress()
-  $(document).on('scroll', onScrollProgress)
-  function onScrollProgress(event){
-    var scrollPos = $(document).scrollTop()
-
-    var currLink = $('.progress-meter')
-    var refElement = $('.progress-meter')
-    if (refElement.position().top + 50 <= scrollPos) {
-      currLink.each(function(i){
-        $(this).css('width', $(this).attr('val') + '%')
-      })
-    }
-  }
-
-  onScrollProfile()
-  $(document).on('scroll', onScrollProfile)
-  function onScrollProfile(event){
-    var scrollPos = $(document).scrollTop()
-
-    var currLink = $('#profile .cover')
-    if (scrollPos > 50) {
-      currLink.css('opacity', 1)
-    }
-  }
-
+// $(document).ready(function(){
+$('body').css('display', 'block')
+$('a').smoothScroll()
+$('.shareter, .shareter i').click(function(e){
+  $(this).toggleClass('open')
 })
 
+onScrollProject()
+$(document).on('scroll', onScrollProject)
+function onScrollProject(event){
+  var scrollPos = $(document).scrollTop()
+
+  var currLink = $('.project .item')
+  var refElement = $('#projects')
+  if (refElement.position().top - 100 <= scrollPos && refElement.position().top + (refElement.height() - 300) > scrollPos) {
+    currLink.addClass('arrived')
+    $('#projects .item').hover(function(){
+      $(this).siblings().addClass('onHoverOther')
+      $(this).addClass('onHoverThis')
+    }, function(){
+      $(this).siblings().removeClass('onHoverOther')
+      $(this).removeClass('onHoverThis')
+    })
+  }
+  else{
+    currLink.removeClass('arrived')
+  }
+}
+
+onScrollWelcome()
+$(document).on('scroll', onScrollWelcome)
+function onScrollWelcome(event){
+  var scrollPos = $(document).scrollTop()
+
+  var currLink = $('#welcome')
+  var refElement = $('#welcome')
+  if (refElement.position().top + (refElement.height() - 300) > scrollPos) {
+    var cal = (100 - (scrollPos / (refElement.position().top + refElement.height() - 300) * 100))
+    currLink.css('transform', 'scale(' + ((cal / 100)) + ')')
+    currLink.css('-webkit-transform', 'scale(' + ((cal / 100)) + ')')
+    currLink.css('opacity', cal / 100)
+  }
+}
+
+onScrollProgress()
+$(document).on('scroll', onScrollProgress)
+function onScrollProgress(event){
+  var scrollPos = $(document).scrollTop()
+
+  var currLink = $('.progress-meter')
+  var refElement = $('.progress-meter')
+  if (refElement.position().top + 50 <= scrollPos) {
+    currLink.each(function(i){
+      $(this).css('width', $(this).attr('val') + '%')
+    })
+  }
+}
+
+onScrollProfile()
+$(document).on('scroll', onScrollProfile)
+function onScrollProfile(event){
+  var scrollPos = $(document).scrollTop()
+
+  var currLink = $('#profile .cover')
+  if (scrollPos > 50) {
+    currLink.css('opacity', 1)
+  }
+}
 $(document).foundation()
+/*eslint-disable no-undef*/
+/*eslint-disable no-unused-vars*/
 var project = new Foundation.Orbit($('.orbit'))
+// })
 
 let modalIsOpen = false
 
@@ -199,7 +199,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
       $('#modal_bg .modal_project .modal_body .orbit .orbit-container', started).html(orbit_html)
       $('#modal_bg .modal_project .modal_body .orbit .orbit-bullets', started).html(bullets_html)
 
-      new Foundation.Orbit($(".orbit"))
+      new Foundation.Orbit($('.orbit'))
     }
   })
 
