@@ -3,8 +3,7 @@ $(document).ready(function(){
   $('.loading_web').fadeOut(),
   $('section').addClass('loaded')
 
-  // $('meta[property="og:url"]').attr('content', $(location).attr('href'))
-  $('#modal_bg, a').smoothScroll()
+  $('a').smoothScroll()
   $('.shareter, .shareter i').click(function(e){
     $(this).toggleClass('open')
   })
@@ -202,13 +201,14 @@ $('#projects .projects .project .item a').on('click', (e)=>{
   })
 
     .done(() => {
-      started.find('#loading_modal').removeClass('show'),
       $('#projects #modal_bg').addClass('show')
 
       setTimeout(()=>{
-        $('#projects #modal_bg .modal_project').addClass('show')
-
-      }, 300)
+        started.find('#loading_modal').removeClass('show')
+        setTimeout(()=>{
+          $('#projects #modal_bg .modal_project').addClass('show')
+        }, 300)
+      }, 1000)
       modalIsOpen = true
     })
 
@@ -238,7 +238,7 @@ $('#projects .projects .project .item a').on('click', (e)=>{
     })
 })
 
-$('#projects #modal_bg').on('click', (e)=>{
+$('#modal_bg').on('click', (e)=>{
   closeModal(e.target)
 })
 
@@ -252,8 +252,8 @@ $('.close_modal').on('click', (e)=>{
 })
 
 let closeModal = (e) =>{
+
   $('.modal_project', e).removeClass('show')
-  // console.log(e)
   $('html, body').animate({
     scrollTop: $('#projects').offset().top
   }, 500)
