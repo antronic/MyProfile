@@ -15,4 +15,8 @@ export default (app) => {
   app.get('/clock', (req, res)=>{
     res.render('clock')
   })
+
+  app.get('/kmutt', (req, ress) => {
+    res.render('kmutt_regis')
+  })
 }
