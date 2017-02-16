@@ -32,6 +32,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
 
+    <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/assets/css/style.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
+
     <style type="text/css">
       html,
       body{
@@ -219,7 +224,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" val="80" style="width: 0%"></div>
+                    <div class="progress-meter" val="90" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -229,7 +234,7 @@
                 </div>
                 <div class="small-7 medium-8 columns">
                   <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                    <div class="progress-meter" val="25" style="width: 0%"></div>
+                    <div class="progress-meter" val="80" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
@@ -289,11 +294,11 @@
               <div class="small-12 item">PHP (CI)</div>
               <div class="small-12 item">NodeJS</div>
               <div class="small-12 item">SQL</div>
+              <div class="small-12 item">NoSQL (MongoDB)</div>
             </div>
             <div class="medium-6 large-4 columns danger">
               <p class="head">Intermediate</p>
               <div class="small-12 item">Java</div>
-              <div class="small-12 item">NoSQL (MongoDB)</div>
               <div class="small-12 item">CanvasJS</div>
             </div>
             <div class="medium-6 large-4 columns warning">
@@ -325,6 +330,7 @@
               <div class="small-12 item">Codeignitor 3</div>
               <div class="small-12 item">jQuery</div>
               <div class="small-12 item">SASS(SCSS)</div>
+              <div class="small-12 item">Babel</div>
               <div class="small-12 item">LESS</div>
               <div class="small-12 item">Bootstrap 3</div>
               <div class="small-12 item">Foundation 6</div>
@@ -332,6 +338,9 @@
               <div class="small-12 item">Laravel 5.2</div>
               <div class="small-12 item">AngularJS 1.0</div>
               <div class="small-12 item">ReactJS (ES2015)</div>
+              <div class="small-12 item">Vue 2</div>
+              <div class="small-12 item">UnderscoreJS</div>
+              <div class="small-12 item">Async</div>
               <div class="small-12 item">Babel</div>
               <div class="small-12 item">Gulp</div>
               <div class="small-12 item">Socket.io</div>
@@ -534,13 +543,13 @@
       <div class="page full reserved transparentcy"></div>
     </div> -->
 
-    <noscript id="deferred-styles">
+    <!-- <noscript id="deferred-styles">
       <link rel="stylesheet" href="/libs/foundation-sites/dist/foundation.min.css" media="none" onload="if(media!='all')media='all'">
       <link rel="stylesheet" href="/assets/css/style.min.css" media="none" onload="if(media!='all')media='all'">
       <link rel="stylesheet" href="/libs/motion-ui/dist/motion-ui.min.css" media="none" onload="if(media!='all')media='all'">
       <link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
-    </noscript>
-    <script>
+    </noscript> -->
+    <!-- <script>
       var loadDeferredStyles = function() {
         var addStylesNode = document.getElementById("deferred-styles");
         var replacement = document.createElement("div");
@@ -552,7 +561,7 @@
           webkitRequestAnimationFrame || msRequestAnimationFrame;
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
-    </script>
+    </script> -->
 
     <script src="/libs/jquery/dist/jquery.min.js"></script>
     <script async src="/libs/foundation-sites/dist/plugins/foundation.core.js"></script>
